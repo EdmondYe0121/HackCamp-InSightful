@@ -7,15 +7,14 @@ function applyFontSizeToTab(tabId) {
         target: { tabId: tabId },
         files: ['scripts/textFunction/applyText.js']
     });
-    
 }
 
 // Listener for when a tab is updated
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-    if (changeInfo.status === 'complete') {
-        console.log('Tab updated:', tabId);
-        applyFontSizeToTab(tabId);
-    }
+    // if (changeInfo.status === 'complete') {
+    //     console.log('Tab updated:', tabId);
+    //     applyFontSizeToTab(tabId);
+    // }
     applyFontSizeToTab(tab.id);
 });
 

@@ -1,5 +1,3 @@
-// content.js
-
 function increaseFontSize() {
     var allElements = document.querySelectorAll('*');
     var maxFontSize = 0;

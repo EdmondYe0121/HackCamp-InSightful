@@ -32,5 +32,6 @@
           "matches": ["<all_urls>"],
           "js": ["scripts/textFunction/increaseText.js","scripts/content.js"]
         }
+
       ]
   }

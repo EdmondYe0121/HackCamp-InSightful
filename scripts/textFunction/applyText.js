@@ -4,7 +4,7 @@ function applyFontSize() {
             document.querySelectorAll('*').forEach(function(element) {
                 var style = window.getComputedStyle(element, null).getPropertyValue('font-size');
                 var currentSize = parseFloat(style);
-                element.style.fontSize = (currentSize + data.fontSize) + 'px';
+                element.style.fontSize = currentSize;
             });
             console.log('Applied font size:', data.fontSize);
         }

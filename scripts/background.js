@@ -9,6 +9,14 @@ function applyFontSizeToTab(tabId) {
     });
 }
 
+function applyDarkModeToTab(tabId) {
+    // apply a function to the content script
+    chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: ['scripts/darkFunction/applyDark.js']
+    })
+}
+
 function applyBrightnessToTab(tabId) {
     chrome.scripting.executeScript({
         target: { tabId: tabId },
@@ -20,17 +28,27 @@ function applyContrastToTab(tabId) {
     chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: ['scripts/contrastFunction/applyContrast.js']
+
     });
 }
 
 // Listener for when a tab is updated
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
+    // if (changeInfo.status === 'complete') {
+    //     console.log('Tab updated:', tabId);
+    //     applyFontSizeToTab(tabId);
+    // }
+    applyFontSizeToTab(tab.id);
+    applyDarkModeToTab(tab.id);
+    
+
     if (changeInfo.status === 'complete') {
         console.log('Tab updated:', tabId);
         applyFontSizeToTab(tabId);
         applyBrightnessToTab(tabId);
         applyContrastToTab(tabId);
     }
+
 });
 
 // Listener for when a new tab is created

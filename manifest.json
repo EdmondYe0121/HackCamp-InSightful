@@ -17,6 +17,7 @@
         "128": "images/icon-128.png"
       }
     },
+
     "permissions": ["scripting", "activeTab", "storage", "tabs"],
     "action": {
       "default_popup": "popup.html"
@@ -27,6 +28,7 @@
       "host_permissions": [
         "<all_urls>"
     ],
+
     "content_scripts": [
         {
           "matches": ["<all_urls>"],
@@ -35,4 +37,5 @@
         }
 
       ]
-  }
+
+}

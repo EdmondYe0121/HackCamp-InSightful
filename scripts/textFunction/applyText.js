@@ -1,4 +1,3 @@
-// Increase font size
 function applyFontSize() {
     chrome.storage.sync.get('fontSize', function(data) {
         if (data.fontSize) {
@@ -11,14 +10,5 @@ function applyFontSize() {
         }
     });
 }
-function increaseFontSize() {
-    chrome.storage.sync.get('fontSize', function(data) {
-        let newFontSize = data.fontSize ? data.fontSize + 1 : 1;
-        chrome.storage.sync.set({ 'fontSize': newFontSize }, function() {
-            console.log('Increased font size saved:', newFontSize);
-            applyFontSize();
-        });
-    });
-}
 
-increaseFontSize();
+applyFontSize();

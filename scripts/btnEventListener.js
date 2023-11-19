@@ -11,6 +11,7 @@ document.getElementById('textUp').addEventListener('click', () => {
             files: ['scripts/textFunction/increaseText.js']
         });
     });
+
     
 });
 
@@ -36,9 +37,29 @@ if(document.querySelector(".popup")) {
                 button.style.animation = "transformToGrey 1s forwards";
                 chrome.scripting.executeScript({
                     target: {tabId: tabs[0].id},
-                    files: ['scripts/darkFunction/appOff.js']
+                 files: ['scripts/darkFunction/appOff.js']
                 });
             }
         })
     })
 }
+
+
+document.getElementById('textDown').addEventListener('click', () => {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.scripting.executeScript({
+            target: {tabId: tabs[0].id},
+            files: ['scripts/textFunction/decreaseText.js']
+        });
+    });
+});
+
+
+document.getElementById('textReset').addEventListener('click', () => {
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        chrome.scripting.executeScript({
+            target: {tabId: tabs[0].id},
+            files: ['scripts/textFunction/resetText.js']
+        });
+    });
+});

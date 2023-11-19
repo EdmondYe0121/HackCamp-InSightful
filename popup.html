@@ -6,6 +6,7 @@
     <title>InSightful</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
+
 <style>
     body{
         min-width: 300px;
@@ -89,26 +90,31 @@
     }
 
 </style>
+
+
 <body class="popup">
-    <h1>InSightful</h1>
+
     <div class="dark-mode">
         <h4>Dark Mode</h4>
         <div class="dark-button">
-            <div class="row">On</div>
-            <div class="row">Off</div>
+            <div class="row" id="darkOn">On</div>
+            <div class="row" id="darkOff">Off</div>
             <div class="circle"></div>
         </div>
     </div>
     <h3>Font</h3>
+
     <h3>Text</h3>
     <button id="textUp">Up</button>
     <button id="textDown">Down</button>
+    <button id="textReset">Reset</button>
     <h3>Brightness</h3>
     <button id="brightnessUp">Up</button>
     <button id="brightnessDown">Down</button>
     <h3>Contrast</h3>
     <button id="contrastUp">Up</button>
     <button id="contrastDown">Down</button>
+    
 </body>
 <script src="scripts/btnEventListener.js"></script>
 </html>

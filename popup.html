@@ -5,19 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InSightful</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        .control-group {
+            display: flex;
+            align-items: center;
+        }
+        .control-group h2 {
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-    <h1>InSightful</h1>
-    <h3>Text</h3>
-    <button id="textUp">Up</button>
-    <button id="textDown">Down</button>
-    <h3>Brightness</h3>
-    <button id="brightnessUp">Up</button>
-    <button id="brightnessDown">Down</button>
-    <h3>Contrast</h3>
-    <button id="contrastUp">Up</button>
-    <button id="contrastDown">Down</button>
-    
+
+    <h3>Font</h3>
+    <div class="control-group">
+        <button id="textUp">Up</button>
+        <h3>Text</h3>
+        <button id="textDown">Down</button>
+    </div>
+
+    <div class="control-group">
+        <button id="brightnessUp">Up</button>
+        <h3>Brightness</h3>
+        <button id="brightnessDown">Down</button>
+    </div>
+
+    <div class="control-group">
+        <button id="contrastUp">Up</button>
+        <h3>Contrast</h3>
+        <button id="contrastDown">Down</button>
+    </div>
+
 </body>
 <script src="scripts/btnEventListener.js"></script>
 </html>

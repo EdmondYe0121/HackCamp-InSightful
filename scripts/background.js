@@ -16,6 +16,7 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     //     applyFontSizeToTab(tabId);
     // }
     applyFontSizeToTab(tab.id);
+    
 });
 
 // Listener for when a new tab is created

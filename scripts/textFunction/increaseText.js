@@ -1,22 +1,24 @@
-function increaseFontSize() {
-    var allElements = document.querySelectorAll('*');
-    var maxFontSize = 0;
-
-    allElements.forEach(function(element) {
-        var style = window.getComputedStyle(element, null).getPropertyValue('font-size');
-        var currentSize = parseFloat(style);
-        element.style.fontSize = (currentSize + 1) + 'px'; // Increase by 1px
-
-        if (currentSize > maxFontSize) {
-            maxFontSize = currentSize;
+// Increase font size
+function applyFontSize() {
+    chrome.storage.sync.get('fontSize', function(data) {
+        if (data.fontSize) {
+            document.querySelectorAll('*').forEach(function(element) {
+                var style = window.getComputedStyle(element, null).getPropertyValue('font-size');
+                var currentSize = parseFloat(style);
+                element.style.fontSize = (currentSize + data.fontSize) + 'px';
+            });
+            console.log('Applied font size:', data.fontSize);
         }
     });
-
-    console.log('Max font size:', maxFontSize + 1);
-
-    // Save the maximum font size to Chrome storage
-    chrome.storage.sync.set({ 'fontSize': maxFontSize + 1 }, function() {
-        console.log('Max font size saved:', maxFontSize + 1);
+}
+function increaseFontSize() {
+    chrome.storage.sync.get('fontSize', function(data) {
+        let newFontSize = data.fontSize ? data.fontSize + 1 : 1;
+        chrome.storage.sync.set({ 'fontSize': newFontSize }, function() {
+            console.log('Increased font size saved:', newFontSize);
+            applyFontSize();
+        });
     });
 }
+
 increaseFontSize();

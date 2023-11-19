@@ -15,4 +15,5 @@ function applyFontSize() {
     });
 }
 
-applyFontSize();
+// applyFontSize();
+alert("resetText.js")

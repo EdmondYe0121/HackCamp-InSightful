@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,38 @@
     </style>
 </head>
 <body>
+    
 
+    <h1>InSightful</h1>
     <h3>Font</h3>
-    <div class="control-group">
+
+    <details role="list">
+        <summary aria-haspopup="listbox">Styles</summary>
+        <ul role="listbox">
+          <li>
+            <input type="radio" id="changeFontArialRadio" font="Arial" name="size">
+            Visual Impairment
+          </li>
+          <li>
+            <input type="radio" id="changeFontVerdanaRadio" font="Verdana" name="size">
+            Dyslexia
+          </li>
+          <li>
+            <input type="radio" id="changeFontHelveticaRadio" font="Helvetica" name="size">
+            Readibility
+          </li>
+        </ul>
+      </details>   
+
+      <div class="control-group">
         <button id="textUp">Up</button>
         <h3>Text</h3>
         <button id="textDown">Down</button>
-    </div>
+      </div>
+      <div class="control-group">
+        <h3>Reset</h3>
+        <button id="textReset"></button>
+      </div>
 
     <div class="control-group">
         <button id="brightnessUp">Up</button>
@@ -35,6 +60,7 @@
         <h3>Contrast</h3>
         <button id="contrastDown">Down</button>
     </div>
+    
 
 </body>
 <script src="scripts/btnEventListener.js"></script>

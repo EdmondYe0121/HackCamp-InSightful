@@ -6,12 +6,103 @@
     <title>InSightful</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
 </head>
-<body>
-    <h1>Hello World</h1>
+<style>
+    body{
+        min-width: 300px;
+        text-align: center;
+        align-items: center;
+    }
+    .dark-mode{
+        align-items: left;
+    }
+    .dark-button{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+        color: black;  
+    }
+    .dark-button{
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 5%;
+        justify-content: space-between;
+        height: 2rem;
+        width: 4.5rem;
+        border-radius: 1rem;
+        cursor:pointer;
+
+    }
+    .row{
+        padding: 0.25rem;
+        pointer-events:none;
+    }
+    .circle{
+        position:absolute;
+        top: 0;
+        left: 0;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: #37465b;
+        pointer-events: none;
+        outline-color: black;
+    }
+    @keyframes moveCircleRight {
+        from{
+            left:0;
+            background-color: #37465b;
+        }
+        to{
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: white;
+        }
+    }
+    @keyframes moveCircleLeft {
+        from{
+            left: 100%;
+            background-color: #37465b;
+        }
+        to{
+            left:0;
+            background-color: white;
+
+        }
+    }
+    @keyframes transformToWhite{
+        from{
+            background-color: white;
+        }
+        to{
+            background-color: #37465b;
+        }
+    }
+    @keyframes transformToGrey{
+        from{
+            background-color: white;
+        }
+        to{
+            background-color: #37465b;
+        }
+    }
+
+</style>
+<body class="popup">
+    <h1>InSightful</h1>
+    <div class="dark-mode">
+        <h4>Dark Mode</h4>
+        <div class="dark-button">
+            <div class="row">On</div>
+            <div class="row">Off</div>
+            <div class="circle"></div>
+        </div>
+    </div>
     <h3>Font</h3>
     <h3>Text</h3>
-    <button>Up</button>
-    <button>Down</button>
+    <button id="textUp">Up</button>
+    <button id="textDown">Down</button>
     <h3>Brightness</h3>
     <button id="brightnessUp">Up</button>
     <button id="brightnessDown">Down</button>
@@ -19,5 +110,5 @@
     <button id="contrastUp">Up</button>
     <button id="contrastDown">Down</button>
 </body>
-<script src="scripts/function.js"></script>
+<script src="scripts/btnEventListener.js"></script>
 </html>

@@ -11,5 +11,6 @@ document.getElementById('textUp').addEventListener('click', () => {
             files: ['scripts/textFunction/increaseText.js']
         });
     });
-    
 });
+
+

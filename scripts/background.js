@@ -14,6 +14,21 @@ function applyDarkModeToTab(tabId) {
     chrome.scripting.executeScript({
         target: { tabId: tabId },
         files: ['scripts/darkFunction/applyDark.js']
+    })
+}
+
+function applyBrightnessToTab(tabId) {
+    chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: ['scripts/brightnessFunction/applyBrightness.js']
+    });
+}
+
+function applyContrastToTab(tabId) {
+    chrome.scripting.executeScript({
+        target: { tabId: tabId },
+        files: ['scripts/contrastFunction/applyContrast.js']
+
     });
 }
 
@@ -26,10 +41,20 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
     applyFontSizeToTab(tab.id);
     applyDarkModeToTab(tab.id);
     
+
+    if (changeInfo.status === 'complete') {
+        console.log('Tab updated:', tabId);
+        applyFontSizeToTab(tabId);
+        applyBrightnessToTab(tabId);
+        applyContrastToTab(tabId);
+    }
+
 });
 
 // Listener for when a new tab is created
 chrome.tabs.onCreated.addListener(function(tab) {
     console.log('New tab opened:', tab.id);
     applyFontSizeToTab(tab.id);
+    applyBrightnessToTab(tab.id);
+    applyContrastToTab(tab.id);
 });

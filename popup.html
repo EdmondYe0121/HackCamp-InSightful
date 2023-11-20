@@ -4,157 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InSightful</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-    <style>
-        .control-group {
-            display: flex;
-            align-items: center;
-        }
-        .control-group h2 {
-            margin-right: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="./popup.css">    
+ 
 </head>
-
-<style>
-    body{
-        min-width: 300px;
-        text-align: center;
-        align-items: center;
-
-    }
-    .dark-mode{
-        align-items: left;
-    }
-    .dark-button{
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: 1rem;
-        color: black;  
-    }
-    .dark-button{
-        background-color: white;
-        position: relative;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 5%;
-        justify-content: space-between;
-        height: 2rem;
-        width: 4.5rem;
-        border-radius: 1rem;
-        cursor:pointer;
-
-    }
-    .row{
-        padding: 0.25rem;
-        pointer-events:none;
-    }
-    .circle{
-        position:absolute;
-        top: 0;
-        left: 0;
-        height: 2rem;
-        width: 2rem;
-        border-radius: 50%;
-        background-color: #37465b;
-        pointer-events: none;
-        outline-color: black;
-    }
-    @keyframes moveCircleRight {
-        from{
-            left:0;
-            background-color: #37465b;
-        }
-        to{
-            left: 100%;
-            transform: translateX(-100%);
-            background-color: white;
-        }
-    }
-    @keyframes moveCircleLeft {
-        from{
-            left: 100%;
-            background-color: #37465b;
-        }
-        to{
-            left:0;
-            background-color: white;
-
-        }
-    }
-    @keyframes transformToWhite{
-        from{
-            background-color: white;
-        }
-        to{
-            background-color: #37465b;
-        }
-    }
-    @keyframes transformToGrey{
-        from{
-            background-color: white;
-        }
-        to{
-            background-color: #37465b;
-        }
-    }
-
-</style>
 
 
 <body class="popup">
-
-    <div class="dark-mode">
-        <h4>Dark Mode</h4>
+    <div class="title">
+        <h1>InSightful</h1>
+    </div>
+    <h3>Dark Mode</h3>
         <div class="dark-button">
             <div class="row" id="darkOn">On</div>
             <div class="row" id="darkOff">Off</div>
             <div class="circle"></div>
         </div>
-    </div>
-    
-
-    <h1>InSightful</h1>
-    <h3>Font</h3>
-
+    <div class="font-dropdown">
         <details role="list">
-            <summary aria-haspopup="listbox">Styles</summary>
+            <summary aria-haspopup="listbox">Font Styles</summary>
             <ul role="listbox">
             <li>
                 <input type="radio" id="changeFontArialRadio" font="Arial" name="size">
-                Visual Impairment
+                Arial
             </li>
             <li>
                 <input type="radio" id="changeFontVerdanaRadio" font="Verdana" name="size">
-                Dyslexia
+                Verdana
             </li>
             <li>
                 <input type="radio" id="changeFontHelveticaRadio" font="Helvetica" name="size">
-                Readibility
+                Helvetica
             </li>
             </ul>
         </details>   
-
+    </div>
         <div class="control-group">
-            <button id="textUp">Up</button>
-            <h3>Text</h3>
             <button id="textDown">Down</button>
+            <h3>Text</h3>
+            <button id="textUp">Up</button>
         </div>
         <div class="control-group">
-            <h3>Reset</h3>
-            <button id="textReset"></button>
+            <button id="textReset">Reset</button>
         </div>
 
         <div class="control-group">
-            <button id="brightnessUp">Up</button>
-            <h3>Brightness</h3>
             <button id="brightnessDown">Down</button>
+            <h3>Brightness</h3>
+            <button id="brightnessUp">Up</button>
         </div>
 
         <div class="control-group">
-            <button id="contrastUp">Up</button>
-            <h3>Contrast</h3>
             <button id="contrastDown">Down</button>
+            <h3>Contrast</h3>
+            <button id="contrastUp">Up</button>
         </div>
 
     

@@ -1,0 +1,107 @@
+
+ul {
+    list-style-type: none;
+  }
+    .popup{
+        min-width: 300px;
+        text-align: center;
+        align-items: center;
+        background-color: bisque;
+        color: black;
+    }
+    .title{
+        background: #37465b;
+        color: wheat;
+        border-radius: 50px;
+    }
+    .font-dropdown{
+        color:black;
+        border-radius: 30px;
+        font-size: medium;
+    }
+  
+    .control-group{
+        display: flex;
+        color: black;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+    }
+    .control-group button{
+        border-radius: 20px;
+        padding: 11px;
+        width: 82px;
+        margin: 10px;
+    }
+    .dark-button{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 1rem;
+        color: black;  
+    }
+    .dark-button{
+        background-color: white;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 5%;
+        justify-content: space-between;
+        height: 2rem;
+        width: 4.5rem;
+        border-radius: 1rem;
+        cursor:pointer;
+
+    }
+    .row{
+        padding: 0.25rem;
+        pointer-events:none;
+    }
+    .circle{
+        position:absolute;
+        top: 0;
+        left: 0;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 50%;
+        background-color: #37465b;
+        pointer-events: none;
+        outline-color: black;
+    }
+    @keyframes moveCircleRight {
+        from{
+            left:0;
+            background-color: #37465b;
+        }
+        to{
+            left: 100%;
+            transform: translateX(-100%);
+            background-color: white;
+        }
+    }
+    @keyframes moveCircleLeft {
+        from{
+            left: 100%;
+            background-color: #37465b;
+        }
+        to{
+            left:0;
+            background-color: white;
+
+        }
+    }
+    @keyframes transformToWhite{
+        from{
+            background-color: white;
+        }
+        to{
+            background-color: #37465b;
+        }
+    }
+    @keyframes transformToGrey{
+        from{
+            background-color: white;
+        }
+        to{
+            background-color: #37465b;
+        }
+    }
